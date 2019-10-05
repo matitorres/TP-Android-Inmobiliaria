@@ -17,4 +17,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="direccion">Dirección</string>
+    <string name="tipo">Tipo</string>
+    <string name="uso">Uso</string>
+    <string name="ambientes">Ambientes</string>
+    <string name="precio">Precio</string>
 </resources>

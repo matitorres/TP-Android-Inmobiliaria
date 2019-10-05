@@ -6,117 +6,116 @@
     android:padding="20dp">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView14"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="Perfil"
+        android:text="Inquilino"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView16"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Nombre" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editText12"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Matias" />
+        android:text="Juan" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView17"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Apellido" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editText13"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Torres" />
+        android:text="Perez" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView18"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Correo electrónico" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editText14"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="matitorres87@gmail.com" />
+        android:text="jp@gmail.com" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView19"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="DNI" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/editText15"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="number"
-        android:text="32887703" />
+        android:text="18365241" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textView20"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Teléfono" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/editText16"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="number"
-        android:text="3512434300" />
+        android:text="2664542000" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textView22"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="10dp">
+        android:layout_weight="1"
+        android:text="Ocupación" />
 
-        <Button
-            android:id="@+id/btnCancelar"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="cancelar" />
+    <EditText
+        android:id="@+id/editText17"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Comerciante" />
 
-        <Button
-            android:id="@+id/btnGuardar"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Guardar"
-            android:textStyle="bold" />
-    </LinearLayout>
-
+    <Button
+        android:id="@+id/btnOk"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cast_tracks_chooser_dialog_ok"
+        android:textStyle="bold" />
 </LinearLayout>

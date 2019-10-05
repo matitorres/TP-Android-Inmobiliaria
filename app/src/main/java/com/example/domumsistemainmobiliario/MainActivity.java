@@ -3,10 +3,7 @@ package com.example.domumsistemainmobiliario;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,12 +13,18 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private AlertDialog dialog;
+    private AlertDialog dialogPerfil;
+    private AlertDialog dialogInquilino;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,17 +33,38 @@ public class MainActivity extends AppCompatActivity {
 
         // Configura la AppBar
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(" Propiedades");
+        toolbar.setTitle(" DOMUM");
         toolbar.setLogo(R.mipmap.logo_domum_round);
         setSupportActionBar(toolbar);
+
+        // Configurar alert de notificaciones
+        ListView listView = new ListView(this);
+        List<String> notificaciones = new ArrayList<>();
+        notificaciones.add("10/09/2019: Has recibido un nuevo pago" +
+                "por tu propiedad ubicada en 9 de julio s/n, San Martín, San Luis");
+        notificaciones.add("12/08/2019: Has recibido un nuevo pago" +
+                "por tu propiedad ubicada en Ruta Provincial 2 s/n, Villa de Praga, San Luis");
+        notificaciones.add("07/07/2019: Has recibido un nuevo pago" +
+                "por tu propiedad ubicada en 9 de julio s/n, San Martín, San Luis");
+        notificaciones.add("07/06/2019: Has recibido un nuevo pago" +
+                "por tu propiedad ubicada en 9 de julio s/n, San Martín, San Luis");
+        notificaciones.add("02/06/2019: Has recibido un nuevo pago" +
+                "por tu propiedad ubicada en Ruta Provincial 2 s/n, Villa de Praga, San Luis");
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                R.layout.item_notificaciones,notificaciones);
+        listView.setAdapter(adapter);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setView(listView);
+        final AlertDialog dialogNotificaciones = builder.create();
 
         // Configura la función del botón flotante
         FloatingActionButton fab = findViewById(R.id.fab_notificaciones);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                dialogNotificaciones.show();
             }
         });
 
@@ -76,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         Toast.makeText(MainActivity.this, "Actualización exitosa", Toast.LENGTH_SHORT).show();
-                        dialog.dismiss();
+                        dialogPerfil.dismiss();
                     }
                 });
 
@@ -84,13 +108,13 @@ public class MainActivity extends AppCompatActivity {
                 btnCancelar.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        dialog.dismiss();
+                        dialogPerfil.dismiss();
                     }
                 });
 
                 builder.setView(view);
-                dialog = builder.create();
-                dialog.show();
+                dialogPerfil = builder.create();
+                dialogPerfil.show();
                 return true;
 
             case R.id.action_salir:
@@ -102,5 +126,9 @@ public class MainActivity extends AppCompatActivity {
                 return false;
 
         }
+    }
+
+    public void mostrarInquilino() {
+
     }
 }
